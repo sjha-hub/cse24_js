@@ -7,7 +7,7 @@ console.log(typeof(num));
 num =false;
 console.log(num);
 console.log(typeof(num));
-num ="samikshsa"; //double or single quotes
+num ="samiksha"; //double or single quotes
 console.log(num);
 console.log(typeof(num));
 num=true;
