@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Grade Calculator</title>
+</head>
+<body>
+<h1>Grade Calculator</h1>
+<h3>Enter the number of subjects</h3>
+<form action="#">
+    <input type="number" id="subjects" />
+</form>
+<button onclick="calculateResult()">Calculate Result</button>
+<div id="Result"></div>
+
+<script>
+function calculateResult() {
+    const n = parseInt(document.getElementById("subjects").value); // convert to number
+
+    let total = 0;
+    for (let i = 0; i < n; i++) {
+        let x = parseFloat(prompt("Enter the subject's marks " + (i + 1)));
+        total += x;
+    }
+
+    let avg = total / n;
+    let grade;
+
+    if (avg >= 90) {
+        grade = "A+";
+    } else if (avg >= 80 && avg < 90) {
+        grade = "B+";
+    } else if (avg >= 70 && avg < 80) {
+        grade = "C+";
+    } else if (avg >= 60 && avg < 70) {
+        grade = "D+";
+    } else {
+        grade = "E";
+    }
+
+    let r;
+    if (avg >= 40) {
+        r = "PASS";
+    } else {
+        r = "FAIL";
+    }
+
+    document.getElementById("Result").innerHTML =
+        "TOTAL MARKS: " + total + "<br>" +
+        "AVERAGE MARKS: " + avg + "<br>" +
+        "GRADE: "3 + grade + "<br>" +
+        "RESULT: " + r;
+}
+</script>
+</body>
+</html>
